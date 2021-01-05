@@ -1,10 +1,10 @@
-from modules import API, database, python_mysql_dbconfig
+from modules import api, database, python_mysql_dbconfig
 import time
 
 if __name__ == "__main__":
     while True:
 
-        data_tem, data_hum, data_time, device = API.get_data()
+        data_tem, data_hum, data_time, device = api.get_data()
 
         print(f"temp: {data_tem}\n"
               f"hum: {data_hum}\n"
