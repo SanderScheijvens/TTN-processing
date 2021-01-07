@@ -16,7 +16,6 @@ def send_data(data_tem, data_hum, data_time, device):
     except Error as error:
         print(error)
 
-
     finally:
         if conn is not None and conn.is_connected():
             cursor = conn.cursor()

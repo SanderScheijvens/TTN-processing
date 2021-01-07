@@ -1,4 +1,5 @@
 import requests, json
+from datetime import datetime
 
 def get_data():
     myUrl = 'https://lora-test-node-beegden.data.thethingsnetwork.org/api/v2/query?last=1d'
@@ -12,7 +13,11 @@ def get_data():
         data = data[-1]
         data_hum = data['humidity']
         data_tem = data['degreesC']
-        data_time = data['time']
+        time = data['time']
+        time = time.replace('T', ' ')
+        size = len(time)
+        time = time[:size - 11]
+        data_time = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
         device = data['device_id']
         if int(data_tem) >= 99 and int(data_hum) >= 99:
             data_tem = None
