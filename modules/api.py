@@ -5,7 +5,7 @@ def get_data():
     myUrl = 'https://lora-test-node-beegden.data.thethingsnetwork.org/api/v2/query?last=1d'
     headers = {
         'Accept': 'application/json',
-        'Authorization': 'key ttn-account-v2.zZlBorjL4MZNSSDe4Hjhjq8raa_5oyLpZw4eXMRxEr8'
+        'Authorization': 'key'
     }
     r = requests.get(myUrl, headers=headers)
     if r.ok:
